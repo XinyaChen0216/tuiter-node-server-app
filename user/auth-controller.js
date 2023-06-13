@@ -43,16 +43,11 @@ const AuthController = (app) => {
         res.json(user)
     };
 
-    const findAllUsers = (req, res) => {
-        const allUsers = usersDao.findAllUsers();
-        res.json(allUsers);
-    };
 
-    app.post("/api/users/register", register);
-    app.post("/api/users/login", login);
-    app.post("/api/users/profile", profile);
-    app.post("/api/users/logout", logout);
-    app.put("/api/users/:uid", update);
-    app.get("/api/users", findAllUsers)
+    app.post("/api/register", register);
+    app.post("/api/login", login);
+    app.post("/api/profile", profile);
+    app.post("/api/logout", logout);
+    app.put("/api/:uid", update);
 };
 export default AuthController;
