@@ -8,9 +8,9 @@ const AuthController = (app) => {
             res.sendStatus(409);
             return;
         }
-        const newUser = usersDao.createUser(req.body);
-        req.session["currentUser"] = newUser;
-        res.json(newUser);
+        usersDao.createUser(req.body);
+        req.session["currentUser"] = req.body;
+        res.json(req.body);
     };
     const login = (req, res) => {
         const username = req.body.username;
@@ -37,12 +37,22 @@ const AuthController = (app) => {
         res.sendStatus(200);
     };
 
-    const update = (req, res) => { };
+    const update = (req, res) => {
+        const user = usersDao.updateUser(req.params.uid, req.body)
+        req.session["currentUser"] = user
+        res.json(user)
+    };
+
+    const findAllUsers = (req, res) => {
+        const allUsers = usersDao.findAllUsers();
+        res.json(allUsers);
+    };
 
     app.post("/api/users/register", register);
     app.post("/api/users/login", login);
     app.post("/api/users/profile", profile);
     app.post("/api/users/logout", logout);
-    app.put("/api/users", update);
+    app.put("/api/users/:uid", update);
+    app.get("/api/users", findAllUsers)
 };
 export default AuthController;

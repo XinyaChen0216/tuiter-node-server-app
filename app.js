@@ -23,6 +23,6 @@ app.use(express.json());
 const port = process.env.PORT || 4000;
 TuitsController(app);
 HelloController(app)
-UserController(app)
+// UserController(app)
 app.listen(process.env.PORT || 4000);
 AuthController(app);
