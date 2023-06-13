@@ -16,7 +16,7 @@ app.use(
 
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://a5--lucent-pasca-1d57bb.netlify.app",
 })
 )
 app.use(express.json());
