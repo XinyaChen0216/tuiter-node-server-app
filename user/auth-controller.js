@@ -16,7 +16,7 @@ const AuthController = (app) => {
             res.sendStatus(403);
             return;
         }
-        const newUser = await userDao.createUser(req.body);
+        const newUser = await usersDao.createUser(req.body);
         req.session["currentUser"] = newUser;
         res.json(newUser);
     };
@@ -59,8 +59,8 @@ const AuthController = (app) => {
         res.sendStatus(200);
     };
 
-    const update = (req, res) => {
-        const user = usersDao.updateUser(req.params.uid, req.body)
+    const update = async (req, res) => {
+        const user = await usersDao.updateUser(req.params.uid, req.body)
         req.session["currentUser"] = user
         res.json(user)
     };
