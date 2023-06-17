@@ -13,12 +13,12 @@ let newTuitTemplate = {
     dislike: 0,
     replies: 0,
     retuits: 0,
+    likes: 0,
+    liked: false
 };
 
 const createTuit = async (req, res) => {
-    const newTuit = req.body;
-    newTuit.likes = 0;
-    newTuit.liked = false;
+    const newTuit = { ...newTuitTemplate, ...req.body };
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
 }
