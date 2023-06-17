@@ -10,7 +10,7 @@ let newTuitTemplate = {
     image: "nasa.png",
     title: "NASA",
     tuit: "",
-    dislike: 0,
+    dislikes: 0,
     replies: 0,
     retuits: 0,
     likes: 0,

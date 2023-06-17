@@ -10,6 +10,7 @@ const schema = mongoose.Schema({
     image: String,
     replies: Number,
     retuits: Number,
-    handle: String
+    handle: String,
+    dislikes: Number
 }, { collection: 'tuits' });
 export default schema;
