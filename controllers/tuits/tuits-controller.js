@@ -4,8 +4,8 @@ import * as tuitsDao from './tuits-dao.js'
 
 let newTuitTemplate = {
     topic: "NASA",
-    username: "Nasa",
-    handle: "@nasa",
+    userName: "Nasa",
+    handle: "@Nasa",
     time: "0h",
     image: "nasa.png",
     title: "NASA",
