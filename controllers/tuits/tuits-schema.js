@@ -11,6 +11,7 @@ const schema = mongoose.Schema({
     replies: Number,
     retuits: Number,
     handle: String,
-    dislikes: Number
+    dislikes: Number,
+    disliked: Boolean
 }, { collection: 'tuits' });
 export default schema;
