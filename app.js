@@ -18,7 +18,7 @@ app.use(
 
 app.use(cors({
     credentials: true,
-    origin: "https://a6--capable-biscotti-961687.netlify.app/",
+    origin: "https://a6--capable-biscotti-961687.netlify.app",
 })
 )
 app.use(express.json());
