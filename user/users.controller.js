@@ -61,7 +61,7 @@ const deleteUser = async (req, res) => {
     // const userId = req.params['uid'];
     // users = users.filter(usr => usr._id !== userId);
     // res.sendStatus(200);
-    const id = req.params.id;
+    const id = req.params.uid;
     const status = await usersDao.deleteUser(id);
     res.json(status);
 }
@@ -75,7 +75,7 @@ const updateUser = async (req, res) => {
     //         usr
     // );
     // res.sendStatus(200);
-    const id = req.params.id;
+    const id = req.params.uid;
     const status = await usersDao.updateUser(id, req.body);
     const user = await usersDao.findUserById(id);
     req.session["currentUser"] = user;
